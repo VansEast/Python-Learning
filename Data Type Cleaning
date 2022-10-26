@@ -1,0 +1,40 @@
+#How to Split the String
+def splitter(x_list):
+    d = []
+    for a in x_list:
+      try:
+        b = a.split(",")
+        c = b[1],int(b[2])
+        d.append(c)
+      except:
+        continue
+    return d
+    
+    
+#How to make Dictionary from split string
+def dicmaker(y_list):
+    d = {}
+    for a in y_list:
+        d[a[0]] = a[1]
+    return d
+
+#How to read csv and store to list
+f_folder = "drive/MyDrive/Python Course/"
+f_name = "country_population_data.csv"
+
+f_path = f_folder + f_name
+with open(f_path, 'r') as f:
+  pop_dict = f.readlines()
+  print(pop_dict)
+  
+  
+#How to save dictionary to text with the each row format
+new_f_path = f_folder + "Testing 1.txt"
+header = "Country : Population\n"
+
+with open(new_f_path, 'w') as new_f:
+  new_f.write(header)
+
+with open(new_f_path, 'a') as new_f:
+  for key, value in new_dict.items():
+    new_f.write("%s : %s\n" % (key,value))
